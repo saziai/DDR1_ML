@@ -1,0 +1,9 @@
+Name,Representative_seed,Pose_consistency,Complex_PDB,Ligand_atoms_in_complex,Status
+Cabozantinib,7,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Cabozantinib_complex.pdb,37,PASS
+Entrectinib,42,NO,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Entrectinib_complex.pdb,41,PASS
+Lenvatinib,7,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Lenvatinib_complex.pdb,30,PASS
+Midostaurin,7,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Midostaurin_complex.pdb,43,PASS
+Quizartinib,2026,NO,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Quizartinib_complex.pdb,40,PASS
+Selpercatinib,42,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Selpercatinib_complex.pdb,39,PASS
+Sorafenib,2026,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Sorafenib_complex.pdb,32,PASS
+Tivozanib,7,YES,/content/drive/MyDrive/DDR1_Workflow/candidate_docking/MANUSCRIPT_GRADE_DDR1_ANALYSIS/complexes/Tivozanib_complex.pdb,32,PASS
