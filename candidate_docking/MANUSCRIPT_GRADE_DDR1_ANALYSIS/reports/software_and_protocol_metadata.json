@@ -1,0 +1,206 @@
+{
+  "analysis_date_utc": "2026-10-11T05:56:34.280315+00:00",
+  "pipeline": "DDR1_candidate_docking",
+  "inputs": {
+    "candidate_file": "/content/drive/MyDrive/DDR1_Workflow/ml_model/results/DDR1_DrugBank_Top10_strict.csv",
+    "candidate_file_sha256": "c29efdfe4b87300cc3646b61fda30dd6e75ece1e9565544c914745cdb6000abd",
+    "receptor_pdbqt": "/content/drive/MyDrive/DDR1_Workflow/candidate_docking/receptor/5SB1_receptor.pdbqt",
+    "receptor_sha256": "f52b93259515a7802d605245c78127c886b24163ab040539cd873fb7ed588a74",
+    "receptor_source": "Notebook 2 output, verified by SHA256 match",
+    "box": {
+      "center_x": 22.764719009399414,
+      "center_y": -2.076000213623047,
+      "center_z": -1.1666250228881836,
+      "size_x": 22.0,
+      "size_y": 22.0,
+      "size_z": 22.0,
+      "derivation": "centroid of crystallographic 1JI in 5SB1 chain A"
+    }
+  },
+  "tool_versions": {
+    "python": "3.13.16",
+    "rdkit": "2026.09.1",
+    "meeko": "0.8.0",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3",
+    "vina": "AutoDock Vina v1.2.5",
+    "plip_available": true,
+    "plip": "usage: PLIP [-h] (-f INPUT [INPUT ...] | -i PDBID [PDBID ...]) [-o OUTPATH |\n            -O] [--rawstring] [-v] [-q] [-s] [-p] [-x] [-t] [-z]\n            [--name OUTPUTFILENAME] [-y] [--maxthreads MAXTHREADS]\n            [--breakcomposite] [--altlocation] [--nofix] [--nofixfile]\n            [--nopdbcanmap] [--dnareceptor]\n            [--peptides PEPTIDES [PEPTIDES ...]] [--intra INTRA] [--keepmod]\n            [--nohydro] [--model MODEL] [--chains CHAINS] [--regions REGIONS]\nPLIP: error: one of the arguments -f/--file -i/--input is required"
+  },
+  "plip_version_note": "Not all PLIP builds support --version. When the short flag fails, the --help output is stored as the fallback. 'plip_available' is a Boolean availability flag, not a version.",
+  "protocol": {
+    "box_center_source": "derived in Notebook 2 from the 1JI centroid",
+    "exhaustiveness": 32,
+    "num_modes": 20,
+    "energy_range_kcal_mol": 4.0,
+    "cpu": 2,
+    "seeds": [
+      7,
+      42,
+      2026
+    ],
+    "pose_consistency_threshold_A": 2.0,
+    "rmsd_method": "Direct heavy-atom RMSD between poses in the receptor frame. No superposition is performed; translation and rotation are part of the pose. RMSD is symmetry-corrected by minimizing over graph-valid heavy-atom automorphisms of the reference ligand. Atom correspondence is derived from Meeko SMILES IDX metadata and a stereochemistry-aware full-graph mapping. Unresolved mappings receive no numeric RMSD.",
+    "representative_pose_rule": "Most central of the three seed poses, defined as the pose with the lowest mean pairwise direct RMSD to the other two.",
+    "plip_input_pose": "The representative seed's pose, not necessarily the best-scoring pose. Rows where the two differ by >= 1 kcal/mol are listed under 'representative_vs_best_disagreements'."
+  },
+  "priority_rule": {
+    "tier_a": "pose-consistent and best Vina <= -10 kcal/mol",
+    "tier_b": "pose-consistent and best Vina <= -8 kcal/mol",
+    "tier_c": "otherwise",
+    "calibrated": false,
+    "calibration_note": "Thresholds are user-set. 'calibrated' is true only when the control-docking ROC 95% CI lower bound is >= 0.6 and the control run was full scope (20 actives, 200 decoys, 3 seeds). Even then, the specific cut-offs are not empirically optimised."
+  },
+  "control_docking": {
+    "n_actives": 20,
+    "n_decoys": 20,
+    "seeds_per_compound": 1,
+    "seeds_used": [
+      7
+    ],
+    "reduced_scope": true,
+    "scope_note": "Full scope is 20 actives, 200 property-matched decoys, 3 Vina seeds per compound. This run used 20 actives, 20 decoys, 1 seed(s). AUC confidence intervals are correspondingly wider and enrichment estimates noisier.",
+    "auc": 0.6875,
+    "auc_ci95": [
+      0.5104166666666667,
+      0.8395989974937343
+    ],
+    "ef_5pct": 2.0,
+    "note": "Controls confirm that the protocol can discriminate DDR1 actives from property-matched decoys. They do NOT validate the absolute tier thresholds."
+  },
+  "control_docking_scope": "reduced",
+  "n_candidates": 8,
+  "tier_counts": {
+    "Tier-A": 4,
+    "Tier-B": 2,
+    "Tier-C (pose unstable)": 2
+  },
+  "overall_qc_counts": {
+    "PASS": 8
+  },
+  "per_candidate_summary": [
+    {
+      "Name": "Sorafenib",
+      "Best_affinity_kcal_mol": -10.83,
+      "Representative_seed_affinity_kcal_mol": -10.76,
+      "Mean_affinity_kcal_mol": -10.753333333333332,
+      "SD_affinity_kcal_mol": 0.08020806277010648,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 1.0220947240838296,
+      "Pose_consistency": "YES",
+      "Representative_seed": 2026,
+      "Total_interactions": 11,
+      "Priority_tier": "Tier-A",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Tivozanib",
+      "Best_affinity_kcal_mol": -10.62,
+      "Representative_seed_affinity_kcal_mol": -10.62,
+      "Mean_affinity_kcal_mol": -10.616666666666665,
+      "SD_affinity_kcal_mol": 0.0057735026918960064,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 0.06524640794710476,
+      "Pose_consistency": "YES",
+      "Representative_seed": 7,
+      "Total_interactions": 9,
+      "Priority_tier": "Tier-A",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Lenvatinib",
+      "Best_affinity_kcal_mol": -10.24,
+      "Representative_seed_affinity_kcal_mol": -10.19,
+      "Mean_affinity_kcal_mol": -10.206666666666665,
+      "SD_affinity_kcal_mol": 0.02886751345948183,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 0.08833308176064796,
+      "Pose_consistency": "YES",
+      "Representative_seed": 7,
+      "Total_interactions": 10,
+      "Priority_tier": "Tier-A",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Cabozantinib",
+      "Best_affinity_kcal_mol": -10.08,
+      "Representative_seed_affinity_kcal_mol": -10.07,
+      "Mean_affinity_kcal_mol": -10.073333333333332,
+      "SD_affinity_kcal_mol": 0.005773502691896135,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 0.0618387178637058,
+      "Pose_consistency": "YES",
+      "Representative_seed": 7,
+      "Total_interactions": 17,
+      "Priority_tier": "Tier-A",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Midostaurin",
+      "Best_affinity_kcal_mol": -8.868,
+      "Representative_seed_affinity_kcal_mol": -8.868,
+      "Mean_affinity_kcal_mol": -8.866999999999999,
+      "SD_affinity_kcal_mol": 0.0017320508075691994,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 0.010068370922014005,
+      "Pose_consistency": "YES",
+      "Representative_seed": 7,
+      "Total_interactions": 4,
+      "Priority_tier": "Tier-B",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Selpercatinib",
+      "Best_affinity_kcal_mol": -8.479,
+      "Representative_seed_affinity_kcal_mol": -8.382,
+      "Mean_affinity_kcal_mol": -8.426333333333332,
+      "SD_affinity_kcal_mol": 0.04903400180826833,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 0.8036570419187784,
+      "Pose_consistency": "YES",
+      "Representative_seed": 42,
+      "Total_interactions": 9,
+      "Priority_tier": "Tier-B",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Entrectinib",
+      "Best_affinity_kcal_mol": -11.25,
+      "Representative_seed_affinity_kcal_mol": -11.25,
+      "Mean_affinity_kcal_mol": -10.9,
+      "SD_affinity_kcal_mol": 0.563471383479232,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 3.918072861907945,
+      "Pose_consistency": "NO",
+      "Representative_seed": 42,
+      "Total_interactions": 10,
+      "Priority_tier": "Tier-C (pose unstable)",
+      "Overall_QC": "PASS"
+    },
+    {
+      "Name": "Quizartinib",
+      "Best_affinity_kcal_mol": -8.682,
+      "Representative_seed_affinity_kcal_mol": -8.651,
+      "Mean_affinity_kcal_mol": -8.443,
+      "SD_affinity_kcal_mol": 0.3874235408438676,
+      "Docking_runs": 3,
+      "Max_pairwise_RMSD_A": 14.158930543123658,
+      "Pose_consistency": "NO",
+      "Representative_seed": 2026,
+      "Total_interactions": 12,
+      "Priority_tier": "Tier-C (pose unstable)",
+      "Overall_QC": "PASS"
+    }
+  ],
+  "representative_vs_best_disagreements": [],
+  "caveats": [
+    "Vina scores are not Delta-G values.",
+    "PLIP contacts are geometric predictions, not measured affinities.",
+    "Only one receptor structure (5SB1) was used; DFG-state and receptor flexibility were not explored.",
+    "Ligands were docked in their neutral form. pH 7.4 protonation states were not enumerated. Amines, amidines, and carboxylic acids are particularly sensitive to protonation state.",
+    "Pose RMSD is symmetry-corrected using graph automorphisms and calculated directly in the receptor coordinate frame without superposition. Atom-order and atom-type checks must pass; unresolved mappings are not assigned a numeric RMSD. Review any UNRESOLVED candidate before interpreting its tier.",
+    "Tier thresholds (-10 and -8 kcal/mol) are user-set and were NOT calibrated against DDR1 actives or decoys: the control-docking ROC was run in reduced scope. Re-run the controls at full scope (CONTROL_SEEDS = SEEDS, CONTROL_N_DECOYS = 200) before publishing any claim that the tiers rank known DDR1 binders above property-matched decoys.",
+    "Priority_tier is a two-factor gate based on pose stability and best Vina score. Interaction counts and pose reproducibility are reported as context and are NOT part of the tier decision.",
+    "Overall_QC reflects whether the pipeline ran cleanly, not whether the pose is biologically trustworthy. Interpret it together with Pose_consistency and Priority_tier."
+  ]
+}
