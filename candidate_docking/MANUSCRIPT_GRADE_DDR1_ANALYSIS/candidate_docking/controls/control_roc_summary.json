@@ -1,0 +1,17 @@
+{
+  "n_actives": 20,
+  "n_decoys": 20,
+  "seeds_per_compound": 1,
+  "seeds_used": [
+    7
+  ],
+  "reduced_scope": true,
+  "scope_note": "Full scope is 20 actives, 200 property-matched decoys, 3 Vina seeds per compound. This run used 20 actives, 20 decoys, 1 seed(s). AUC confidence intervals are correspondingly wider and enrichment estimates noisier.",
+  "auc": 0.6875,
+  "auc_ci95": [
+    0.5104166666666667,
+    0.8395989974937343
+  ],
+  "ef_5pct": 2.0,
+  "note": "Controls confirm that the protocol can discriminate DDR1 actives from property-matched decoys. They do NOT validate the absolute tier thresholds."
+}
