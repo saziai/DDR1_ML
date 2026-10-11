@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the repository and the associated manuscript when available."
+title: "DDR1 Computational Prioritization Workflow"
+type: software
+authors:
+  - family-names: Ziaei
+    given-names: Seyed Ali
+    affiliation: "Department of Pharmacology, Faculty of Medicine, Shahid Beheshti University of Medical Sciences"
+version: 0.1.0
+date-released: 2026-10-11

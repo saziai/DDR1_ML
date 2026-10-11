@@ -1,0 +1,22 @@
+name: ddr1-workflow
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - matplotlib
+  - seaborn
+  - plotly
+  - openpyxl
+  - joblib
+  - rdkit
+  - biopython
+  - pip:
+      - meeko==0.8.0
+      - gemmi
+      - prody
+      - plip

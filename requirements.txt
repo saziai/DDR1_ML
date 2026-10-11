@@ -1,0 +1,18 @@
+# Python dependencies for local environments. RDKit and some compiled packages
+# may be easiest to install with conda/mamba. AutoDock Vina and PLIP executables
+# are system-level tools and are not installed by this file.
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+seaborn
+plotly
+openpyxl
+joblib
+rdkit
+biopython
+meeko==0.8.0
+gemmi
+prody
+plip
