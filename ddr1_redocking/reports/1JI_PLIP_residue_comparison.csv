@@ -1,0 +1,8 @@
+interaction,crystal_residues,redocked_residues,matched,missed_from_crystal,new_in_redocked,n_crystal,n_redocked,n_matched,n_missed,n_new
+hbond,ASP778;GLU672;MET704,ASP778;GLU672;MET704,ASP778;GLU672;MET704,,,3,3,3,0,0
+hydrophobic,ASP778;ILE684;ILE685;LEU616;LEU679;LEU767;LYS655;THR701,ASP778;ILE684;ILE685;LEU616;LEU679;LYS655;PHE756;THR701,ASP778;ILE684;ILE685;LEU616;LEU679;LYS655;THR701,LEU767,PHE756,8,8,7,1,1
+salt_bridge,,,,,,0,0,0,0,0
+pi_stack,,,,,,0,0,0,0,0
+pi_cation,,,,,,0,0,0,0,0
+halogen_bond,,,,,,0,0,0,0,0
+water_bridge,,,,,,0,0,0,0,0

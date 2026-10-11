@@ -1,0 +1,158 @@
+{
+  "receptor_pdbqt": "/content/drive/MyDrive/DDR1_Workflow/ddr1_redocking/receptor/5SB1_receptor.pdbqt",
+  "receptor_sha256": "f52b93259515a7802d605245c78127c886b24163ab040539cd873fb7ed588a74",
+  "ligand_pdbqt": "/content/drive/MyDrive/DDR1_Workflow/ddr1_redocking/ligand/1JI_docking.pdbqt",
+  "ligand_sha256": "65f147184cdaa0c6ef3d51049d998040ef2f17b127e8e642487cf08e5ee97eae",
+  "box": {
+    "center_x": 22.764719009399414,
+    "center_y": -2.076000213623047,
+    "center_z": -1.1666250228881836,
+    "size_x": 22.0,
+    "size_y": 22.0,
+    "size_z": 22.0,
+    "derivation": "centroid of crystallographic 1JI in 5SB1 chain A"
+  },
+  "seeds": [
+    7,
+    42,
+    2026
+  ],
+  "best_seed": 7,
+  "rmsd_table": [
+    {
+      "seed": 7,
+      "heavy_atoms": 32,
+      "rmsd_A": 0.23279309482886315,
+      "within_2A": true,
+      "graph_mappings_considered": 2,
+      "superposition": false
+    },
+    {
+      "seed": 42,
+      "heavy_atoms": 32,
+      "rmsd_A": 0.26683445242322074,
+      "within_2A": true,
+      "graph_mappings_considered": 2,
+      "superposition": false
+    },
+    {
+      "seed": 2026,
+      "heavy_atoms": 32,
+      "rmsd_A": 0.2818350581457176,
+      "within_2A": true,
+      "graph_mappings_considered": 2,
+      "superposition": false
+    }
+  ],
+  "interaction_comparison": [
+    {
+      "type": "hbond",
+      "crystal": 4,
+      "redocked": 4,
+      "delta": 0
+    },
+    {
+      "type": "hydrophobic",
+      "crystal": 8,
+      "redocked": 9,
+      "delta": 1
+    }
+  ],
+  "residue_comparison": [
+    {
+      "interaction": "hbond",
+      "crystal_residues": "ASP778;GLU672;MET704",
+      "redocked_residues": "ASP778;GLU672;MET704",
+      "matched": "ASP778;GLU672;MET704",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 3,
+      "n_redocked": 3,
+      "n_matched": 3,
+      "n_missed": 0,
+      "n_new": 0
+    },
+    {
+      "interaction": "hydrophobic",
+      "crystal_residues": "ASP778;ILE684;ILE685;LEU616;LEU679;LEU767;LYS655;THR701",
+      "redocked_residues": "ASP778;ILE684;ILE685;LEU616;LEU679;LYS655;PHE756;THR701",
+      "matched": "ASP778;ILE684;ILE685;LEU616;LEU679;LYS655;THR701",
+      "missed_from_crystal": "LEU767",
+      "new_in_redocked": "PHE756",
+      "n_crystal": 8,
+      "n_redocked": 8,
+      "n_matched": 7,
+      "n_missed": 1,
+      "n_new": 1
+    },
+    {
+      "interaction": "salt_bridge",
+      "crystal_residues": "",
+      "redocked_residues": "",
+      "matched": "",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 0,
+      "n_redocked": 0,
+      "n_matched": 0,
+      "n_missed": 0,
+      "n_new": 0
+    },
+    {
+      "interaction": "pi_stack",
+      "crystal_residues": "",
+      "redocked_residues": "",
+      "matched": "",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 0,
+      "n_redocked": 0,
+      "n_matched": 0,
+      "n_missed": 0,
+      "n_new": 0
+    },
+    {
+      "interaction": "pi_cation",
+      "crystal_residues": "",
+      "redocked_residues": "",
+      "matched": "",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 0,
+      "n_redocked": 0,
+      "n_matched": 0,
+      "n_missed": 0,
+      "n_new": 0
+    },
+    {
+      "interaction": "halogen_bond",
+      "crystal_residues": "",
+      "redocked_residues": "",
+      "matched": "",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 0,
+      "n_redocked": 0,
+      "n_matched": 0,
+      "n_missed": 0,
+      "n_new": 0
+    },
+    {
+      "interaction": "water_bridge",
+      "crystal_residues": "",
+      "redocked_residues": "",
+      "matched": "",
+      "missed_from_crystal": "",
+      "new_in_redocked": "",
+      "n_crystal": 0,
+      "n_redocked": 0,
+      "n_matched": 0,
+      "n_missed": 0,
+      "n_new": 0
+    }
+  ],
+  "hbond_pass_criterion_met": true,
+  "rmsd_method": "Graph-mapped symmetry-corrected direct heavy-atom RMSD; no superposition.",
+  "input_coordinate_mapping_qc": "Passed strict SDF-to-PDBQT coordinate-preservation QC before RMSD calculation.",
+  "note": "Redocking validation tests reproduction of the crystallographic pose; it does not by itself validate predictions for other ligands."
+}

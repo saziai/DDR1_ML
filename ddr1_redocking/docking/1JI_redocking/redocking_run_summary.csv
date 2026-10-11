@@ -1,0 +1,4 @@
+seed,rc,output,status
+7,0,/content/drive/MyDrive/DDR1_Workflow/ddr1_redocking/docking/1JI_redocking/1JI_redocked_seed_7.pdbqt,SUCCESS
+42,0,/content/drive/MyDrive/DDR1_Workflow/ddr1_redocking/docking/1JI_redocking/1JI_redocked_seed_42.pdbqt,SUCCESS
+2026,0,/content/drive/MyDrive/DDR1_Workflow/ddr1_redocking/docking/1JI_redocking/1JI_redocked_seed_2026.pdbqt,SUCCESS

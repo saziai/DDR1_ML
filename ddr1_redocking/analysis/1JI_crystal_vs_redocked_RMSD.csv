@@ -1,0 +1,4 @@
+seed,heavy_atoms,rmsd_A,within_2A,graph_mappings_considered,superposition
+7,32,0.23279309482886315,True,2,False
+42,32,0.26683445242322074,True,2,False
+2026,32,0.2818350581457176,True,2,False
