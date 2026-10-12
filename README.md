@@ -63,10 +63,10 @@ DDR1_Workflow/
 ├── ddr1_config.py
 ├── notebooks/
 │   ├── 00_DDR1_CONFIG.ipynb
-│   ├── 01_DDR1_ML_MODEL.ipynb
-│   ├── 02_DDR1_REDOCKING.ipynb
-│   ├── 03_DDR1_CANDIDATE_DOCKING.ipynb
-│   └── 04_DDR1_VISUALIZATION.ipynb
+│   ├── 01_DDR1_MODEL.ipynb
+│   ├── 02_DDR1_REDOCK.ipynb
+│   ├── 03_DDR1_DOCK.ipynb
+│   └── 04_DDR1_VIZ.ipynb
 ├── data/
 │   ├── raw/
 │   └── processed/
