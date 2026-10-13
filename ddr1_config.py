@@ -11,6 +11,17 @@ from sklearn.base import BaseEstimator, RegressorMixin
 # ----------------------------------------------------------------
 # Fingerprint k-NN regressor (Tanimoto similarity, binary arrays)
 # ----------------------------------------------------------------
+def tanimoto_kernel(X1, X2):
+    """Tanimoto kernel for binary fingerprint arrays.
+    Defined at module level (not in a notebook cell) so that SVR models using it
+    can be saved with joblib and reloaded in a fresh session."""
+    X1 = np.asarray(X1, dtype=np.float64)
+    X2 = np.asarray(X2, dtype=np.float64)
+    inter = X1 @ X2.T
+    union = X1.sum(axis=1)[:, None] + X2.sum(axis=1)[None, :] - inter
+    return np.divide(inter, union, out=np.zeros_like(inter), where=union > 0)
+
+
 class TanimotoKNN(BaseEstimator, RegressorMixin):
     """k-NN regressor using Tanimoto similarity on binary fingerprints.
 
